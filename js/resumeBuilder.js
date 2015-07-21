@@ -10,46 +10,30 @@ var bio = {
 	"pictureUrl":"images/me.jpg",
 	"welcomeMsg":"Hello",
 	"skills":["Developer","SomeSkill"]
-};
+}
 
 var work = {
-	"current":"Sr. Automation Engg.",
-	"employer":"AppDirect"
-};
+	"employer":"AppDirect",
+	"title":"Sr. Automation Engg.",
+	"dates":"4th August, 2014",
+	"location":"San Francisco",
+	"description:":"some description"
+}
 
 var project = {
 	"name:":"some name"
-};
+}
 
 var education = {
 	"school":"San Jose State University",
 	"gradDate":"Dec 2007"
+}
+
+if (bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+
+	for (var i = 0; i < bio.skills.length; i++) {
+		var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+		$("#skills").append(formattedSkills)
+	};
 };
-
-// #header
-var formattedName = HTMLheaderName.replace("%data%", bio.name);
-
-var formattedRole = HTMLheaderRole.replace("%data%", bio["role"]);
-
-//using prepend instead of append
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-// #topContacts
-var contact = "Contact";
-var formattedContact = HTMLcontactGeneric.replace("%contact%", contact);
-var data = "Data";
-var formattedData = formattedContact.replace("%data%", data);
-$("#topContacts").append(formattedData);
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
-
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedEmail);
-
-var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.gitHub);
-$("#topContacts").append(formattedGitHub);
-
-// NOT WORKING NEED TO DEBUG
-$("#workExperience").prepend("some workExperience");
