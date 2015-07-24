@@ -13,7 +13,7 @@ var bio = {
 	"Developer",
 	"SomeSkill"
 	]
-}
+};
 
 var work = {
 	"jobs": [
@@ -25,23 +25,23 @@ var work = {
 		"description:":"some description"
 	},
 	{
-		"employer": "AppDirect",
+		"employer": "EMC Corp",
 		"title":"Sr. Automation Engg.",
 		"dates":"4th August, 2014",
 		"location":"San Francisco",
 		"description:":"some description"
 	}
 	]
-}
+};
 
 var project = {
 	"name:":"some name"
-}
+};
 
 var education = {
 	"school":"San Jose State University",
 	"gradDate":"Dec 2007"
-}
+};
 
 // #header
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -84,7 +84,8 @@ $("#topContacts").append(formattedGitHub);
 
 
 // #workExperience
-if (job in work.jobs) {
+var job;
+for (job in work.jobs) {
 	$("#workExperience").append(HTMLworkStart);
 
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
