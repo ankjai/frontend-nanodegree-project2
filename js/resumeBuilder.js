@@ -22,14 +22,14 @@ var work = {
 		"title":"Sr. Automation Engg.",
 		"dates":"4th August, 2014",
 		"location":"San Francisco",
-		"description:":"some description"
+		"description":"For instance, on the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much—the wheel, New York, wars and so on—whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man—for precisely the same reasons."
 	},
 	{
 		"employer": "EMC Corp",
 		"title":"Sr. Automation Engg.",
 		"dates":"4th August, 2014",
 		"location":"San Francisco",
-		"description:":"some description"
+		"description":"\“For a moment, nothing happened. Then, after a second or so, nothing continued to happen.\” "
 	}
 	]
 };
@@ -107,4 +107,5 @@ for (job in work.jobs) {
 	$(".work-entry:last").append(formattedEmployerTitle);
 	$(".work-entry:last").append(formattedDates);
 	$(".work-entry:last").append(formattedLocation);
+	$(".work-entry:last").append(formattedDescription);
 };
