@@ -91,6 +91,20 @@ for (job in work.jobs) {
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
+	// debug statements
+	console.log("job:"+job);
+	console.log("formattedEmployerTitle:"+formattedEmployerTitle);
+	console.log("formattedDates:"+formattedDates);
+	console.log("formattedLocation:"+formattedLocation);
+	console.log("formattedDescription:"+formattedDescription);
+
+	// :last is needed as it will append to all existing
+	// .work-entry repeating values.
 	$(".work-entry:last").append(formattedEmployerTitle);
+	$(".work-entry:last").append(formattedDates);
+	$(".work-entry:last").append(formattedLocation);
 };
