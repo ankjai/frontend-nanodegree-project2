@@ -1,46 +1,43 @@
 var bio = {
-	"name": "Ankit Jaiswal",
-	"role": "Full Stack Developer",
-	"contacts": {
-		"mobile": "408-382-9971",
-		"email": "ankit.jaiswal@hotmail.com",
-		"gitHub": "ankjai",
-		"location": "San Jose"
-	},
-	"pictureUrl": "images/fry.jpg",
-	"welcomeMsg": "Hello",
-	"skills": [
-	"Developer",
-	"SomeSkill"
-	]
+    "name": "Ankit Jaiswal",
+    "role": "Full Stack Developer",
+    "contacts": {
+        "mobile": "408-382-9971",
+        "email": "ankit.jaiswal@hotmail.com",
+        "gitHub": "ankjai",
+        "location": "San Jose"
+    },
+    "pictureUrl": "images/fry.jpg",
+    "welcomeMsg": "Hello",
+    "skills": [
+        "Developer",
+        "SomeSkill"
+    ]
 };
 
 var work = {
-	"jobs": [
-	{
-		"employer": "AppDirect",
-		"title":"Sr. Automation Engg.",
-		"dates":"4th August, 2014",
-		"location":"San Francisco",
-		"description":"For instance, on the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much—the wheel, New York, wars and so on—whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man—for precisely the same reasons."
-	},
-	{
-		"employer": "EMC Corp",
-		"title":"Sr. Automation Engg.",
-		"dates":"4th August, 2014",
-		"location":"San Francisco",
-		"description":"\“For a moment, nothing happened. Then, after a second or so, nothing continued to happen.\” "
-	}
-	]
+    "jobs": [{
+        "employer": "AppDirect",
+        "title": "Sr. Automation Engg.",
+        "dates": "4th August, 2014",
+        "location": "San Francisco",
+        "description": "For instance, on the planet Earth, man had always assumed that he was more intelligent than dolphins because he had achieved so much—the wheel, New York, wars and so on—whilst all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man—for precisely the same reasons."
+    }, {
+        "employer": "EMC Corp",
+        "title": "Sr. Automation Engg.",
+        "dates": "4th August, 2014",
+        "location": "San Francisco",
+        "description": "\“For a moment, nothing happened. Then, after a second or so, nothing continued to happen.\” "
+    }]
 };
 
 var project = {
-	"name:":"some name"
+    "name:": "some name"
 };
 
 var education = {
-	"school":"San Jose State University",
-	"gradDate":"Dec 2007"
+    "school": "San Jose State University",
+    "gradDate": "Dec 2007"
 };
 
 // #header
@@ -56,12 +53,12 @@ $("#header").prepend(formattedBioPic);
 // $("#header").prepend(formattedWelcomeMsg);
 
 if (bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
+    $("#header").append(HTMLskillsStart);
 
-	for (var i = 0; i < bio.skills.length; i++) {
-		var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-		$("#skills").append(formattedSkills)
-	};
+    for (var i = 0; i < bio.skills.length; i++) {
+        var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkills)
+    };
 };
 
 
@@ -84,28 +81,43 @@ $("#topContacts").append(formattedGitHub);
 
 
 // #workExperience
-var job;
-for (job in work.jobs) {
-	$("#workExperience").append(HTMLworkStart);
+function displayWork() {
+    var job;
+    for (job in work.jobs) {
+        $("#workExperience").append(HTMLworkStart);
 
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	var formattedEmployerTitle = formattedEmployer + formattedTitle;
-	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-	// debug statements
-	console.log("job:"+job);
-	console.log("formattedEmployerTitle:"+formattedEmployerTitle);
-	console.log("formattedDates:"+formattedDates);
-	console.log("formattedLocation:"+formattedLocation);
-	console.log("formattedDescription:"+formattedDescription);
+        // debug statements
+        // console.log("job:" + job);
+        // console.log("formattedEmployerTitle:" + formattedEmployerTitle);
+        // console.log("formattedDates:" + formattedDates);
+        // console.log("formattedLocation:" + formattedLocation);
+        // console.log("formattedDescription:" + formattedDescription);
 
-	// :last is needed as it will append to all existing
-	// .work-entry repeating values.
-	$(".work-entry:last").append(formattedEmployerTitle);
-	$(".work-entry:last").append(formattedDates);
-	$(".work-entry:last").append(formattedLocation);
-	$(".work-entry:last").append(formattedDescription);
-};
+        // :last is needed as it will append to all existing
+        // .work-entry repeating values.
+        $(".work-entry:last").append(formattedEmployerTitle);
+        $(".work-entry:last").append(formattedDates);
+        $(".work-entry:last").append(formattedLocation);
+        $(".work-entry:last").append(formattedDescription);
+    };
+}
+
+displayWork();
+
+// collecting click locations
+$(document).click(
+	function(loc){
+		// console.log(loc);
+		var x = loc.pageX;
+		var y = loc.pageY;
+
+		logClicks(x,y);
+	}
+);
