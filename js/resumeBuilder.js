@@ -120,3 +120,16 @@ $(document).click(
 		logClicks(x,y);
 	}
 );
+
+// function to internationalize the name
+function inName (fullName) {
+	var splitNameArray = fullName.trim().split(" ");
+	splitNameArray[0] = splitNameArray[0].slice(0,1).toUpperCase() +
+		splitNameArray[0].slice(1).toLowerCase();
+	splitNameArray[1] = splitNameArray[1].toUpperCase();
+	return splitNameArray[0] + " " + splitNameArray[1];
+}
+
+// add internationalizeButton
+$("#main").append(internationalizeButton);
+
