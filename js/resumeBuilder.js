@@ -32,19 +32,23 @@ var work = {
 };
 
 var allProjects = {
-	"project":[{
+	"project": [
+	{
 		"title": "Project 1",
-		"date":"April 2015",
-		"description":"some description of project 1.",
-		"pictureUrl1":"images/fry.jpg",
-		"pictureUrl2":"images/fry.jpg"
+		"date": "April 2015",
+		"description": "some description of project 1.",
+		"images": [
+		"images/fry.jpg",
+		"images/fry.jpg"
+		]
 	},
 	{
 		"title": "Project 2",
-		"date":"May 2015",
-		"description":"some description of project 2.",
-		"pictureUrl1":"images/fry.jpg",
-		"pictureUrl2":"images/fry.jpg"
+		"date": "May 2015",
+		"description": "some description of project 2.",
+		"images": [
+		"images/fry.jpg"
+		]
 	}
 	]
 };
@@ -156,14 +160,18 @@ allProjects.display = function(){
 		var formattedTitle = HTMLprojectTitle.replace("%data%", allProjects.project[projectNo].title);
 		var formattedDates = HTMLprojectDates.replace("%data%", allProjects.project[projectNo].date);
 		var formattedDescription = HTMLprojectDescription.replace("%data%", allProjects.project[projectNo].description);
-		var formattedImage1 = HTMLprojectImage.replace("%data%", allProjects.project[projectNo].pictureUrl1);
-		var formattedImage2 = HTMLprojectImage.replace("%data%", allProjects.project[projectNo].pictureUrl2);
 
 		$(".project-entry:last").append(formattedTitle);
 		$(".project-entry:last").append(formattedDates);
 		$(".project-entry:last").append(formattedDescription);
-		$(".project-entry:last").append(formattedImage1);
-		$(".project-entry:last").append(formattedImage2);
+
+		if (allProjects.project[projectNo].images.length > 0) {
+			console.log("images length:"+allProjects.project[projectNo].images.length);
+			for (var imageNo in allProjects.project[projectNo].images) {
+				var formattedImage = HTMLprojectImage.replace("%data%", allProjects.project[projectNo].images[imageNo]);
+				$(".project-entry:last").append(formattedImage);
+			}
+		};
 	}
 };
 
