@@ -177,6 +177,9 @@ allProjects.display = function(){
 
 allProjects.display();
 
+// add map
+$("#mapDiv").append(googleMap);
+
 
 
 
