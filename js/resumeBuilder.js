@@ -5,7 +5,7 @@ var bio = {
 		"mobile": "408-382-9971",
 		"email": "ankit.jaiswal@hotmail.com",
 		"gitHub": "ankjai",
-		"twitter": "ank_jai",
+		"twitter": "@ank_jai",
 		"location": "San Jose, CA"
 	},
 	"pictureUrl": "images/fry.jpg",
@@ -55,8 +55,38 @@ var allProjects = {
 };
 
 var education = {
-	"school": "San Jose State University",
-	"gradDate": "Dec 2007"
+	"schools": [
+	{
+		"name":"San Jose State University",
+		"location":"San Jose, CA",
+		"degree":"M.S. Software Engineering",
+		"major":"Enterprise Software Technology",
+		"date":"December 2007",
+		"url":"http://www.sjsu.edu/"
+	},
+	{
+		"name":"Marathwada University",
+		"location":"Aurangabad, MH, India",
+		"degree":"Bachelor of Engineering",
+		"major":"Enterprise Software Technology",
+		"date":"June 2004",
+		"url":"http://www.bamu.ac.in/"
+	}
+	],
+	"onlineCourses":[
+	{
+		"title":"Front-End Web Developer Nanodegree",
+		"school":"Udacity",
+		"date":"October 2015",
+		"url":"https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+	},
+	{
+		"title":"Full Stack Web Developer Nanodegree",
+		"school":"Udacity",
+		"date":"March 2016",
+		"url":"https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004"
+	}
+	]
 };
 
 // #header
@@ -113,13 +143,6 @@ function displayWork() {
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-        // debug statements
-        // console.log("job:" + job);
-        // console.log("formattedEmployerTitle:" + formattedEmployerTitle);
-        // console.log("formattedDates:" + formattedDates);
-        // console.log("formattedLocation:" + formattedLocation);
-        // console.log("formattedDescription:" + formattedDescription);
-
         // :last is needed as it will append to all existing
         // .work-entry repeating values.
         $(".work-entry:last").append(formattedEmployerTitle);
@@ -130,6 +153,7 @@ function displayWork() {
 }
 
 displayWork();
+
 
 // collecting click locations
 $(document).click(
@@ -142,6 +166,7 @@ $(document).click(
 	}
 	);
 
+
 // function to internationalize the name
 function inName (fullName) {
 	var splitNameArray = fullName.trim().split(" ");
@@ -153,6 +178,7 @@ function inName (fullName) {
 
 // add internationalizeButton
 $("#main").append(internationalizeButton);
+
 
 // display allProjects
 allProjects.display = function(){
@@ -179,6 +205,31 @@ allProjects.display = function(){
 };
 
 allProjects.display();
+
+
+// #education
+function displayEducation() {
+	for (var school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+
+		var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var schoolNameDegree = formattedName + formattedDegree;
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].date);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+
+        // :last is needed as it will append to all existing
+        // .education-entry repeating values.
+        $(".education-entry:last").append(schoolNameDegree);
+        $(".education-entry:last").append(formattedDates);
+        $(".education-entry:last").append(formattedLocation);
+        $(".education-entry:last").append(formattedMajor);
+    };
+}
+
+displayEducation();
+
 
 // add map
 $("#mapDiv").append(googleMap);
