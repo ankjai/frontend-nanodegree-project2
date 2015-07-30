@@ -5,10 +5,11 @@ var bio = {
 		"mobile": "408-382-9971",
 		"email": "ankit.jaiswal@hotmail.com",
 		"gitHub": "ankjai",
-		"location": "San Jose"
+		"twitter": "ank_jai",
+		"location": "San Jose, CA"
 	},
 	"pictureUrl": "images/fry.jpg",
-	"welcomeMsg": "Hello",
+	"welcomeMsg": "Suspendisse a pulvinar turpis. Curabitur nec laoreet magna. Donec volutpat dolor non tempor accumsan. Quisque vel risus imperdiet, suscipit eros hendrerit, condimentum est. Nulla facilisi. Nulla at cursus urna, at viverra diam. Curabitur pharetra tellus ac vestibulum volutpat. Morbi ac sem lacus. Mauris eros dui, consequat non mattis ut, eleifend.",
 	"skills": [
 	"Developer",
 	"SomeSkill"
@@ -67,8 +68,8 @@ var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
 //using prepend instead of append
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
-$("#header").prepend(formattedBioPic);
-// $("#header").prepend(formattedWelcomeMsg);
+$("#header").append(formattedBioPic);
+$("#header").append(formattedWelcomeMsg);
 
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
@@ -80,22 +81,24 @@ if (bio.skills.length > 0) {
 };
 
 
-// #topContacts
-var contact = "Contact";
-var formattedContact = HTMLcontactGeneric.replace("%contact%", contact);
-
-var data = "Data";
-var formattedData = formattedContact.replace("%data%", data);
-$("#topContacts").append(formattedData);
-
+// #topContacts and #footerContacts
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedMobile);
+$("#footerContacts").append(formattedMobile);
 
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 $("#topContacts").append(formattedEmail);
+$("#footerContacts").append(formattedEmail);
+
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$("#topContacts").append(formattedTwitter);
+$("#footerContacts").append(formattedTwitter);
 
 var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.gitHub);
 $("#topContacts").append(formattedGitHub);
+
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts").append(formattedLocation);
 
 
 // #workExperience
