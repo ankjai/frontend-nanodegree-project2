@@ -6,7 +6,7 @@ var bio = {
 		"email": "ankit.jaiswal@hotmail.com",
 		"gitHub": "ankjai",
 		"twitter": "@ank_jai",
-		"location": "San Jose, CA"
+		"location": "167 Rancho Manor Court, San Jose, CA"
 	},
 	"pictureUrl": "images/fry.jpg",
 	"welcomeMsg": "Suspendisse a pulvinar turpis. Curabitur nec laoreet magna. Donec volutpat dolor non tempor accumsan. Quisque vel risus imperdiet, suscipit eros hendrerit, condimentum est. Nulla facilisi. Nulla at cursus urna, at viverra diam. Curabitur pharetra tellus ac vestibulum volutpat. Morbi ac sem lacus. Mauris eros dui, consequat non mattis ut, eleifend.",
