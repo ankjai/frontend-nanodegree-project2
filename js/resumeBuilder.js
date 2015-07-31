@@ -73,7 +73,7 @@ var education = {
 		"url":"http://www.bamu.ac.in/"
 	}
 	],
-	"onlineCourses":[
+	"onlineClasses":[
 	{
 		"title":"Front-End Web Developer Nanodegree",
 		"school":"Udacity",
@@ -208,6 +208,7 @@ allProjects.display();
 
 
 // #education
+// .education-entry
 function displayEducation() {
 	for (var school in education.schools) {
 		$("#education").append(HTMLschoolStart);
@@ -229,6 +230,28 @@ function displayEducation() {
 }
 
 displayEducation();
+
+// #education
+// .onlineClass-entry
+function displayOnlineClasses(){
+	$("#education").append(HTMLonlineClasses);
+
+	for(var onlineClass in education.onlineClasses){
+		$("#education").append(HTMLonlineClassesStart);
+
+		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onlineClass].title);
+		var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineClass].school);
+		var onlineTitleAndSchool = formattedTitle + formattedSchool;
+		var formattedDates = HTMLonlineDates.replace("%data%", education.onlineClasses[onlineClass].date);
+		var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineClasses[onlineClass].url);
+
+		$(".onlineClass-entry:last").append(onlineTitleAndSchool);
+		$(".onlineClass-entry:last").append(formattedDates);
+		$(".onlineClass-entry:last").append(formattedUrl);
+	}
+}
+
+displayOnlineClasses();
 
 
 // add map
