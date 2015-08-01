@@ -10,10 +10,22 @@ var bio = {
     },
     "pictureUrl": "images/fry.jpg",
     "welcomeMsg": "Suspendisse a pulvinar turpis. Curabitur nec laoreet magna. Donec volutpat dolor non tempor accumsan. Quisque vel risus imperdiet, suscipit eros hendrerit, condimentum est. Nulla facilisi. Nulla at cursus urna, at viverra diam. Curabitur pharetra tellus ac vestibulum volutpat. Morbi ac sem lacus. Mauris eros dui, consequat non mattis ut, eleifend.",
-    "skills": [
-        "Developer",
-        "SomeSkill"
-    ]
+    "skills": [{
+        "name": "Languages",
+        "list": ["Java", "JavaScript", "jQuery", "HTML5", "CSS3", "XML", "SQL", "XPath", "XQuery", "JUnit4", "Shell Script"]
+    }, {
+        "name": "Technology",
+        "list": ["JSON", "RESTful Web Service", "SOAP", "WSDL", "HTTP", "AJAX", "TestNG", "Selenium Web Driver"]
+    }, {
+        "name": "Cloud Computing Platform",
+        "list": ["Cloud Foundry", "Amazon AWS"]
+    }, {
+        "name": "Database",
+        "list": ["Apache Cassandra", "MySQL", "SQL Server", "Oracle"]
+    }, {
+        "name": "Software",
+        "list": ["IntelliJ IDEA", "Sublime Text", "Eclipse", "Aptana Studio", "Git", "Perforce", "Maven", "Gradle"]
+    }]
 };
 
 var work = {
@@ -92,14 +104,14 @@ $("#header").prepend(formattedName);
 $("#header").append(formattedBioPic);
 $("#header").append(formattedWelcomeMsg);
 
-if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
+// if (bio.skills.length > 0) {
+//     $("#header").append(HTMLskillsStart);
 
-    for (var i = 0; i < bio.skills.length; i++) {
-        var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-        $("#skills").append(formattedSkills)
-    };
-};
+//     for (var i = 0; i < bio.skills.length; i++) {
+//         var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+//         $("#skills").append(formattedSkills)
+//     };
+// };
 
 
 // #topContacts and #footerContacts
@@ -120,6 +132,26 @@ $("#topContacts").append(formattedGitHub);
 
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts").append(formattedLocation);
+
+
+// skills
+function displaySkills() {
+    // body...
+    for (var skill in bio.skills) {
+        $("#skillSet").append(HTMLskillsStart);
+
+        var formattedSkillSet = HTMLskillSet.replace("%data%", bio.skills[skill].name);
+        $(".skillSet-entry:last").append(formattedSkillSet);
+
+        if (bio.skills[skill].list.length > 0) {
+            for (var listItem in bio.skills[skill].list) {
+                var formattedSkillList = HTMLskillList.replace("%data%", bio.skills[skill].list[listItem]);
+                $(".skillSet-entry:last").append(formattedSkillList);
+            }
+        };
+    }
+}
+displaySkills();
 
 
 // #workExperience
