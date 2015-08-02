@@ -1,0 +1,65 @@
+* {
+    border: solid red 1px !important;
+}
+
+
+/* IDs */
+
+#main {
+    /*border: solid blue 3px;*/
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+
+#outerHeader {
+    /*border: solid green 2px;*/
+    background-color: gray;
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+}
+
+#header {
+    /*border: solid black 1px;*/
+    /*position: fixed;*/
+    /*padding: 10px;*/
+    /*margin: 10px;*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#leftNav {
+  list-style-type: none;
+  text-align: center;
+  /*padding: inherit;*/
+}
+
+#outerContent {
+    /*border: solid gray 2px;*/
+    background-color: antiquewhite;
+    width: 80%;
+    /*float: right;*/
+    padding: 10px;
+    margin: 10px;
+}
+
+#content {
+    /*border: solid gray 1px;*/
+    background-color: bisque;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    /*padding: 10px;*/
+    /*margin: 10px;*/
+}
+
+/* CLASSES */
+
+
+/* TAGS */
+
+img {
+    width: 100%;
+    max-width: 300px;
+}
