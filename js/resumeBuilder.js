@@ -33,7 +33,12 @@ function displayHeader() {
     // #header
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.pictureUrl);
     $("#header").prepend(formattedBioPic);
+}
+displayHeader();
 
+
+function displayAboutMe() {
+    // body...
     // #intro
     $("#intro").append(HTMLintroStart);
 
@@ -47,7 +52,7 @@ function displayHeader() {
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
     $("#bio-entry").append(formattedWelcomeMsg);
 }
-displayHeader();
+displayAboutMe();
 
 
 // skills
