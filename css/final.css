@@ -1,0 +1,182 @@
+* {
+    /*border: solid red 1px !important;*/
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+
+/* TAGS */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+/* IDs */
+
+#header {
+    background-color: #7f8c93;
+    position: fixed;
+    height: 100%;
+    width: 20%;
+    padding: 10px;
+}
+
+#header ul {
+    list-style-type: none;
+    padding: 0.5em 1em;
+    margin: 0;
+}
+
+#header li {
+    padding: 0.5em 1em;
+}
+
+#header li:hover {
+    background-color: #626e7a;
+}
+
+#header a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #fc8a27;
+    font-family: 'Nunito', sans-serif;
+    font-weight: normal;
+}
+
+#main {
+    background: url("../images/binding_light.png");
+    background-color: #f8f8f8;
+    margin-left: 20%;
+}
+
+#content {
+    background-color: #7f8c93;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#map {
+    display: block;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#mapDiv {
+    display: table;
+    height: 400px;
+    width: 100%;
+    padding-bottom: 5%;
+}
+
+#contacts-entry {
+    padding: .25em 1em;
+}
+
+#footerContacts {
+    list-style-type: none;
+    display: flex;
+    padding: 0em;
+    text-align: center;
+}
+
+#footerContacts li {
+    width: 25%;
+    font-size: 1.5em;
+}
+
+#footerContacts a {
+    text-decoration: none;
+}
+
+#footerContacts a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: normal;
+    color: #fc8a27;
+}
+
+
+/* CLASSES */
+
+.biopic {
+    width: 100%;
+    padding: 1em;
+}
+
+.div-lvl-1 {
+    padding: 2em;
+}
+
+.div-lvl-1 h2 {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: #fc8a27;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: normal;
+}
+
+.div-lvl-2 {
+    background-color: #626e7a;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.div-lvl-2 hr {
+    margin: 1.5em 0em;
+}
+
+.div-lvl-3 {
+    background-color: #363f54;
+    margin: 1em .25em;
+}
+
+.div-lvl-3-p, .div-lvl-3-ul, .div-lvl-3-img {
+    padding: 1em;
+    color: white;
+    font-family: verdana;
+    text-align: justify;
+}
+
+.div-lvl-3-img img {
+    width: 25%;
+    padding: 5px;
+}
+
+.span-lvl-2-left {
+    color: #fc8a27;
+    font-size: 1.5em;
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+}
+
+.span-lvl-2-left a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.span-lvl-2-right {
+    float: right;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.span-lvl-2-subHeading {
+    color: #7f8c93;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+}
