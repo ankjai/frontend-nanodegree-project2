@@ -29,23 +29,25 @@ var bio = {
     }]
 };
 
-// #header
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.pictureUrl);
-$("#header").prepend(formattedBioPic);
+function displayHeader() {
+    // #header
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.pictureUrl);
+    $("#header").prepend(formattedBioPic);
 
+    // #intro
+    $("#intro").append(HTMLintroStart);
 
-// #intro
-$("#intro").append(HTMLintroStart);
+    var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
+    $("#bio-entry").append(formattedHeaderName);
 
-var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
-$("#bio-entry").append(formattedHeaderName);
+    var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
+    $("#bio-entry").append(formattedHeaderRole);
+    $("#bio-entry").append(HTMLobjective);
 
-var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#bio-entry").append(formattedHeaderRole);
-$("#bio-entry").append(HTMLobjective);
-
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
-$("#bio-entry").append(formattedWelcomeMsg);
+    var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
+    $("#bio-entry").append(formattedWelcomeMsg);
+}
+displayHeader();
 
 
 // skills
