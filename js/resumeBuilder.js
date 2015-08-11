@@ -29,15 +29,15 @@ var bio = {
     }]
 };
 
-function displayHeader() {
+bio.displayHeader = function() {
     // #header
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.pictureUrl);
     $("#header").prepend(formattedBioPic);
 }
-displayHeader();
+bio.displayHeader();
 
 
-function displayAboutMe() {
+bio.displayAboutMe = function() {
     // body...
     // #intro
     $("#intro").append(HTMLintroStart);
@@ -52,11 +52,11 @@ function displayAboutMe() {
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMsg);
     $("#bio-entry").append(formattedWelcomeMsg);
 }
-displayAboutMe();
+bio.displayAboutMe();
 
 
 // skills
-function displaySkills() {
+bio.displaySkills = function() {
     // body...
     for (var skill in bio.skills) {
         var formattedSkillsStart = HTMLskillsStart.replace("%idno%", skill);
@@ -77,7 +77,7 @@ function displaySkills() {
         }
     }
 }
-displaySkills();
+bio.displaySkills();
 
 
 var work = {
@@ -97,7 +97,7 @@ var work = {
 };
 
 // #workExperience
-function displayWork() {
+work.displayWork = function() {
     for (var job in work.jobs) {
         var formattedWorkStart = HTMLworkStart.replace("%idno%", job);
         $("#workExperience").append(formattedWorkStart);
@@ -122,7 +122,7 @@ function displayWork() {
         $("#description-entry-p-" + job).append(formattedWorkDescription);
     }
 }
-displayWork();
+work.displayWork();
 
 
 var allProjects = {
@@ -150,7 +150,7 @@ var allProjects = {
 };
 
 // display allProjects
-function displayProjects() {
+allProjects.displayProjects = function() {
     // body...
     for (var project in allProjects.projects) {
         var formattedProjectStart = HTMLprojectStart.replace("%idno%", project);
@@ -190,7 +190,7 @@ function displayProjects() {
     }
 
 }
-displayProjects();
+allProjects.displayProjects();
 
 
 var education = {
@@ -223,7 +223,7 @@ var education = {
 };
 
 // #education
-function displayEducation() {
+education.displayEducation = function() {
     // body...
     for (var school in education.schools) {
         var formattedSchoolStart = HTMLschoolStart.replace("%idno%", school);
@@ -252,10 +252,10 @@ function displayEducation() {
         $("#schoolInfo-entry-p-" + school).append(formattedSchoolMajor);
     }
 }
-displayEducation();
+education.displayEducation();
 
 // #education
-function displayOnlineClasses() {
+education.displayOnlineClasses = function() {
     for (var onlineClass in education.onlineClasses) {
         var formattedOnlineClassesStart = HTMLonlineClassesStart.replace("%idno%", onlineClass);
         $("#education").append(formattedOnlineClassesStart);
@@ -277,7 +277,7 @@ function displayOnlineClasses() {
         $("#onlineSchoolInfo-entry-p-" + onlineClass).append(formattedOnlineSchool);
     }
 }
-displayOnlineClasses();
+education.displayOnlineClasses();
 
 
 // collecting click locations
