@@ -79,6 +79,29 @@ bio.displaySkills = function() {
 }
 bio.displaySkills();
 
+// footerContacts
+bio.displayContacts = function() {
+    // body...
+    $("#letsConnect").append(HTMLFooterContactsStart);
+
+    // mobile
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    $("#footerContacts").append(formattedMobile);
+
+    // email
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    $("#footerContacts").append(formattedEmail);
+
+    // github
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.gitHub);
+    $("#footerContacts").append(formattedGithub);
+
+    // linkedin
+    var formattedLinkedin = HTMLlinkedIn.replace("%data%", bio.contacts.linkedin);
+    $("#footerContacts").append(formattedLinkedin);
+}
+bio.displayContacts();
+
 
 var work = {
     "jobs": [{
@@ -307,26 +330,3 @@ function inName(fullName) {
 
 // add map
 $("#mapDiv").append(googleMap);
-
-// footerContacts
-function displayContacts() {
-    // body...
-    $("#letsConnect").append(HTMLFooterContactsStart);
-
-    // mobile
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    $("#footerContacts").append(formattedMobile);
-
-    // email
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    $("#footerContacts").append(formattedEmail);
-
-    // github
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.gitHub);
-    $("#footerContacts").append(formattedGithub);
-
-    // linkedin
-    var formattedLinkedin = HTMLlinkedIn.replace("%data%", bio.contacts.linkedin);
-    $("#footerContacts").append(formattedLinkedin);
-}
-displayContacts();
